@@ -72,7 +72,7 @@ var pregame;
 function setup()
 {
     // Create canvas
-    var c = createCanvas(800,500);
+    var c = createCanvas(800,450);
     c.parent('app');
 
     // Initialise floor position
@@ -148,12 +148,12 @@ function draw()
         noStroke();
         textAlign(CENTER);
         textSize(20);
-        text("Explore the forest and collect all " + collectables.length + " fishes.", width/2,200);
-        text("Jump over all canyons. Lose a life when you fall into a canyon.", width/2,250);
-        text("Find the flag pole once all salmon have been collected.", width/2,300);
-        text("You have " +lives +" lives now. Earn 1 point for each extra life left at the end.",width/2,350);
+        text("Explore the forest and collect all " + collectables.length + " fishes.", width/2,150);
+        text("Jump over all canyons. Lose a life when you fall into a canyon.", width/2,200);
+        text("Find the flag pole once all salmon have been collected.", width/2,250);
+        text("You have " +lives +" lives now. Earn 1 point for each extra life left at the end.",width/2,300);
         textSize(30);
-        text("PRESS THE SPACE BAR TO BEGIN", width/2,450);
+        text("PRESS THE SPACE BAR TO BEGIN", width/2,400);
 
     }
 
@@ -455,7 +455,7 @@ function startGame()
     collectables=[];
     for (var i =0; i<4; i++){
         collectables.push({pos_x:round(random(-5000,5000)),
-                           pos_y:round(random(310,320)),
+                           pos_y:round(random(260,270)),
                            size:round(random(90,100)),
                            is_found:false
                           });
@@ -477,7 +477,7 @@ function startGame()
         if(i==0 || i==1 || i==2){
             // Add collectable at first 3 random locations
             collectables.push({pos_x:platforms[i].x-random(0,50),
-                               pos_y:round(random(230,240)),
+                               pos_y:round(random(180,190)),
                                size:round(random(90,100)),
                                is_found:false
                           });
