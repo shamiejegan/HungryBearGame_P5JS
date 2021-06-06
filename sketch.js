@@ -69,39 +69,39 @@ var flagPole;
 var pregame;
 
 // Define variables for game sound
-var backgroundSound;
-var jumpSound;
-var plummetingSound;
-var levelCompleteSound;
+// var backgroundSound;
+// var jumpSound;
+// var plummetingSound;
+// var levelCompleteSound;
 
-
-function preload()
-{
-   // Sounds to be played in this game are of mp3 format
-   soundFormats('mp3');
-
-   // Sound to be looped throughout game
-   backgroundSound=loadSound('assets/forestambience.mp3');
-   backgroundSound.setVolume(0.2);
-
-   // Sound to be played when character jumps.
-   jumpSound=loadSound('assets/jump.mp3');
-   jumpSound.setVolume(0.2);
-
-   // Sound to be played when character falls through canyon
-   plummetingSound=loadSound('assets/water.mp3');
-   plummetingSound.setVolume(0.2);
-
-   // Sound to be played when level is completed
-   levelCompleteSound=loadSound('assets/levelComplete.mp3');
-   levelCompleteSound.setVolume(0.2);
-
-}
+//
+// function preload()
+// {
+//    // Sounds to be played in this game are of mp3 format
+//    soundFormats('mp3');
+//
+//    // Sound to be looped throughout game
+//    backgroundSound=loadSound('assets/forestambience.mp3');
+//    backgroundSound.setVolume(0.2);
+//
+//    // Sound to be played when character jumps.
+//    jumpSound=loadSound('assets/jump.mp3');
+//    jumpSound.setVolume(0.2);
+//
+//    // Sound to be played when character falls through canyon
+//    plummetingSound=loadSound('assets/water.mp3');
+//    plummetingSound.setVolume(0.2);
+//
+//    // Sound to be played when level is completed
+//    levelCompleteSound=loadSound('assets/levelComplete.mp3');
+//    levelCompleteSound.setVolume(0.2);
+//
+// }
 
 function setup()
 {
     // Create canvas
-    var c = createCanvas(windowWidth*0.5, windowHeight*0.8);
+    var c = createCanvas(windowWidth*0.7, windowHeight*0.7);
     c.parent('app');
 
     // Initialise floor position
@@ -302,9 +302,9 @@ function draw()
             isFalling=false;
             gameChar_y+=5;
 
-            if(!plummetingSound.isPlaying()){
-                plummetingSound.play();
-            }
+            // if(!plummetingSound.isPlaying()){
+            //     plummetingSound.play();
+            // }
         }
 
         // Make the game character rise and fall
@@ -356,11 +356,11 @@ function draw()
         // Calculate total score
         text("Total Score: " + (game_score + lives) ,width/2, height/2-100);
 
-        // stop playing background sound
-        backgroundSound.stop();
-
-        // stop playing plummenting sound
-        plummetingSound.stop();
+        // // stop playing background sound
+        // backgroundSound.stop();
+        //
+        // // stop playing plummenting sound
+        // plummetingSound.stop();
 
         return;
     }
@@ -379,8 +379,8 @@ function draw()
         // Calculate total score
         text("Total Score: " + (game_score+lives),width/2, height/2-100);
 
-        // stop playing background sound
-        backgroundSound.stop();
+        // // stop playing background sound
+        // backgroundSound.stop();
 
         return;
     }
@@ -409,14 +409,14 @@ function keyPressed()
        && keyCode==32
        && gameChar_y==floorPos_y){
         gameChar_y-=100;
-        jumpSound.play();
+        // jumpSound.play();
     }
 
     // Press space bar to jump when character is on the platform. Allow jumps only when character is on the platform only if there are still lives and level not complete.
     for (var i=0; i<platforms.length; i++){
         if(platforms[i].checkContact(gameChar_world_x,gameChar_y)==true && keyCode==32){
             gameChar_y-=100;
-            jumpSound.play();
+            // jumpSound.play();
         }
     }
 
@@ -429,8 +429,8 @@ function keyPressed()
     // If space bar is pressed during pregame state, change state to game state.
     if(keyCode==32 && pregame==true){
 
-        // Start playing background sound
-        backgroundSound.loop();
+        // // Start playing background sound
+        // backgroundSound.loop();
 
         // Set pregame to false;
         pregame=false;
@@ -1109,9 +1109,9 @@ function checkFlagPole()
     if (d<=5 && game_score==collectables.length){
         flagPole.isReached=true;
 
-        // play level complete sound
-        if(!levelCompleteSound.isPlaying()){
-                levelCompleteSound.play();
-            }
+        // // play level complete sound
+        // if(!levelCompleteSound.isPlaying()){
+        //         levelCompleteSound.play();
+        //     }
     }
 }
