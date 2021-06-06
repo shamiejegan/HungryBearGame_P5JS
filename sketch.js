@@ -101,7 +101,8 @@ function preload()
 function setup()
 {
     // Create canvas
-	createCanvas(1024, 576);
+    var c = createCanvas(windowWidth*0.5, windowHeight*0.8);
+    c.parent('app');
 
     // Initialise floor position
     floorPos_y = height * 3/4;
