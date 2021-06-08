@@ -316,12 +316,12 @@ function draw()
         rect(100,100,width-200,height-200);
         fill(0);
         stroke(0);
-        textSize(50);
+        textSize(30);
         textAlign("center");
         text("Game Over.",width/2, height/2);
-        text("Press Space to Play Again.",width/2, height/2+100);
+        text("Press Space to Play Again.",width/2, height/2+50);
         // Calculate total score
-        text("Total Score: " + (game_score + lives) ,width/2, height/2-100);
+        text("Total Score: " + (game_score + lives) ,width/2, height/2-50);
 
         return;
     }
@@ -333,12 +333,12 @@ function draw()
         rect(100,100,width-200,height-200);
         fill(0);
         stroke(0);
-        textSize(50);
+        textSize(30);
         textAlign("center");
         text("Level Complete.",width/2, height/2);
-        text("Press Space to Play Again.",width/2, height/2+100);
+        text("Press Space to Play Again.",width/2, height/2+50);
         // Calculate total score
-        text("Total Score: " + (game_score+lives),width/2, height/2-100);
+        text("Total Score: " + (game_score+lives),width/2, height/2-50);
 
 
         return;
@@ -992,7 +992,7 @@ function checkCollectable(t_collectable)
 
     // Variable d measures radial distance between character and each collectable.
     d=dist(gameChar_world_x,
-           gameChar_y-30,
+           gameChar_y-40,
            t_collectable.pos_x,
            t_collectable.pos_y);
 
