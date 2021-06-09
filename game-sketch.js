@@ -12,29 +12,6 @@ Game Project Sumbission Code
     - The player gets a hint of the location of the flagpole on the top right hand corner of the screen.
 
 
-## Extension 1: Added sounds
-
-    - Types of sounds added:
-        1. A sound that plays on loop, only while the game is being played.
-        2. A sound that is played once the level has been completed.
-        3. A sound that is played once when the character jumps.
-        4. A sound that is played once when the character falls through the canyon.
-
-    - Difficulties and Lessons Learnt:
-        1. At the initial stages of developing the code, the sounds to be played when the game enters a state of plummeting into a canyon and when the character completes the level played infinitely. I had difficulties getting the sound to stop playing after it has played once.
-        To use this sound.isPlaying() was used as a condition to play the sound only if it is not already playing, within the condition that checks if the state has been entered.
-        I learnt the importance of searching through the online community with people who have encountered such issues, and building on the lessons from the solutions suggested by other coders.
-
-
-## Extension 2: Platforms with factory pattern
-
-    - Platforms were created using the user-defined function createPlatforms(x,y,length, draw, checkContact) function. Draw and checkContact are subfunctions. To make the player utilize the platform, 3 of the collectables will be located in a y-position that can only be reached if the user uses the platform.
-
-    - Difficulties and lessons learnt:
-        Initally, I had difficulties with the character's states when it was on a platform. When moving left and right on the platform, the character was in a "isLeft" and "isFalling" state, since the character is above the platform level.
-        To tackle this, instead of setting isFalling to true whenever the character is above the ground level, a new variable isContact was defined within the conditional statement. I parsed through all items of the platforms object to identify if the character is on the platform. This ensures that isFalling is true only when then character is not in contact with the platform. It was only through multiple iterations and re-looking at what each code does, that this was identified.
-        I learnt the importance of having good code formatting practice (indentations and new lines) and keeping extensive documentation of codes. Even though I was the one who developed the codes from the start, after some time, it can be easy to forget what each section of the code does if documentation is not proper.
-
 ************************************************************/
 
 // Define Variables for game character position
